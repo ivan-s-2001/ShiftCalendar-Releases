@@ -3,32 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>График СЗ — рабочий график на Android</title>
-  <meta name="description" content="График СЗ показывает рабочее расписание из Google Таблицы, хранит личные заметки и напоминания и работает с офлайн-кешем. Скачать подписанный APK.">
+  <title>График СЗ</title>
+  <meta name="description" content="Внутреннее Android-приложение для просмотра рабочего графика сотрудников.">
   <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">  <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
+  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="График СЗ">
-  <meta property="og:description" content="Рабочий график, виджеты, заметки и напоминания на Android.">
+  <meta property="og:description" content="Рабочий график сотрудников на Android.">
   <meta property="og:url" content="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "График СЗ",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Android 8.0+",
-    "url": "https://ivan-s-2001.github.io/ShiftCalendar-Releases/",
-    "downloadUrl": "https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "RUB"
-    }
-  }
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
@@ -40,9 +25,8 @@
         <span>График СЗ</span>
       </a>
       <nav class="nav-links" aria-label="Основная навигация">
-        <a href="#features">Возможности</a>
-        <a href="#google-data">Данные Google</a>
         <a href="privacy.html">Конфиденциальность</a>
+        <a href="support.html">Поддержка</a>
         <a class="keep-mobile" href="#download">Скачать</a>
       </nav>
     </div>
@@ -51,18 +35,21 @@
   <main id="main">
     <section class="shell hero">
       <div>
-        <p class="eyebrow">Android · бесплатно</p>
-        <h1>Рабочий график без лишних движений</h1>
+        <p class="eyebrow">Внутреннее приложение · Android</p>
+        <h1>График СЗ</h1>
         <p class="lead">
-          «График СЗ» читает расписание из рабочей Google Таблицы, показывает смены в календаре и виджетах,
-          сохраняет офлайн-копию и синхронизирует личные заметки через закрытую папку данных Google Drive.
+          Приложение для сотрудников компании: рабочий график, виджеты,
+          заметки и напоминания.
         </p>
+
         <div class="actions">
-          <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
+          <a class="button primary" data-download-latest
+             href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
             Скачать APK
           </a>
-          <a class="button secondary" href="#google-data">Как используются данные Google</a>
+          <a class="button secondary" href="privacy.html">Конфиденциальность</a>
         </div>
+
         <p class="release-meta">
           <span data-release-version>Последняя версия</span>
           <span aria-hidden="true"> · </span>
@@ -70,112 +57,19 @@
         </p>
       </div>
 
-      <div class="hero-card" aria-label="Пример недельного графика">
+      <div class="hero-card" aria-label="Пример рабочего графика">
         <div class="calendar-demo">
           <div class="demo-head">Пн</div><div class="demo-head">Вт</div><div class="demo-head">Ср</div>
           <div class="demo-head">Чт</div><div class="demo-head">Пт</div><div class="demo-head">Сб</div>
           <div class="demo-head">Вс</div>
 
-          <div class="shift morning"><span class="day">5</span><span>04:00<br>12:30</span></div>
-          <div class="shift fn"><span class="day">6</span><span>06:00<br>15:00</span></div>
-          <div class="shift dayoff"><span class="day">7</span><span>ВЫХ</span></div>
-          <div class="shift pushkin"><span class="day">8</span><span>07:00<br>16:00</span></div>
-          <div class="shift evening"><span class="day">9</span><span>12:30<br>21:00</span></div>
+          <div class="shift morning dark-ink"><span class="day">5</span><span>04:00<br>12:30</span></div>
+          <div class="shift fn dark-ink"><span class="day">6</span><span>06:00<br>15:00</span></div>
+          <div class="shift dayoff dark-ink"><span class="day">7</span><span>ВЫХ</span></div>
+          <div class="shift pushkin dark-ink"><span class="day">8</span><span>07:00<br>16:00</span></div>
+          <div class="shift evening dark-ink"><span class="day">9</span><span>12:30<br>21:00</span></div>
           <div class="shift overtime dark-ink"><span class="day">10</span><span>08:00<br>19:00</span></div>
-          <div class="shift weekend"><span class="day">11</span><span>04:00<br>21:00</span></div>
-        </div>
-        <div class="hero-note">
-          <span>Цвет смены одинаков в светлой и тёмной теме.</span>
-          <span>Время остаётся на виду.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell trust" aria-label="Основные свойства">
-      <div class="trust-row">
-        <span class="pill">Без рекламы</span>
-        <span class="pill">Без сервера приложения</span>
-        <span class="pill">Офлайн-кеш графика</span>
-        <span class="pill">Подписанные обновления APK</span>
-      </div>
-    </section>
-
-    <section id="features" class="section">
-      <div class="shell">
-        <div class="section-intro">
-          <p class="eyebrow">В приложении</p>
-          <h2>График, который удобно открыть на ходу</h2>
-          <p>
-            Приложение рассчитано на сотрудников, у которых уже есть доступ к рабочей таблице.
-            Оно не редактирует смены и не записывает ничего в исходную Google Таблицу.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <div class="card-number">01</div>
-            <h3>Календарь и список</h3>
-            <p>Месяц, неделя и список дней используют одну палитру смен. Рабочие выходные, переработки и ночные смены различаются цветом.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">02</div>
-            <h3>Виджеты Android</h3>
-            <p>Представление выбирается при добавлении виджета. После этого оно перекомпоновывается под доступный размер и показывает больше деталей на крупных сетках.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">03</div>
-            <h3>Заметки и напоминания</h3>
-            <p>Личные записи привязаны к датам. Напоминания работают на устройстве, а копия заметок может синхронизироваться через приватное хранилище приложения в Google Drive.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="google-data" class="section">
-      <div class="shell">
-        <div class="section-intro">
-          <p class="eyebrow">Google OAuth</p>
-          <h2>Доступ запрашивается только для функций приложения</h2>
-          <p>
-            Авторизация нужна, чтобы проверить доступ пользователя к рабочей таблице, прочитать расписание
-            и синхронизировать личные заметки. Пароль Google приложение не получает.
-          </p>
-        </div>
-
-        <div class="data-grid">
-          <article class="data-card">
-            <h3>Google Sheets: только чтение</h3>
-            <code class="scope">https://www.googleapis.com/auth/spreadsheets.readonly</code>
-            <p>
-              Приложение читает только заранее заданную рабочую таблицу и отображает график. Оно не перечисляет
-              другие таблицы пользователя, не даёт выбирать произвольные файлы, не создаёт, не изменяет
-              и не удаляет таблицы или их содержимое.
-            </p>
-          </article>
-
-          <article class="data-card">
-            <h3>Google Drive: только данные приложения</h3>
-            <code class="scope">https://www.googleapis.com/auth/drive.appdata</code>
-            <p>
-              Используется закрытая папка <code>appDataFolder</code> для личных заметок и напоминаний.
-              Этот доступ не позволяет просматривать обычные файлы пользователя в Google Drive.
-            </p>
-          </article>
-        </div>
-
-        <div class="limited-use">
-          <strong>Google API Services User Data — Limited Use</strong>
-          <span>
-            Использование информации, полученной через Google Workspace API, соответствует Google API Services
-            User Data Policy, включая требования Limited Use. Данные Google используются только для функций,
-            которые пользователь видит в приложении; они не продаются, не передаются рекламным системам и не
-            используются для обучения общих моделей ИИ.
-          </span>
-        </div>
-
-        <div class="actions">
-          <a class="button secondary" href="privacy.html">Политика конфиденциальности</a>
-          <a class="button secondary" href="terms.html">Условия использования</a>
+          <div class="shift weekend dark-ink"><span class="day">11</span><span>04:00<br>21:00</span></div>
         </div>
       </div>
     </section>
@@ -187,20 +81,22 @@
             <div>
               <p class="eyebrow">Последний релиз</p>
               <h2 data-release-version>График СЗ</h2>
-              <p data-release-meta>Подписанный APK для Android 8.0 и новее</p>
+              <p data-release-meta>Подписанный APK</p>
             </div>
-            <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
+            <a class="button primary" data-download-latest
+               href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
               Скачать APK
             </a>
           </div>
+
           <div class="status" data-release-status>
-            Проверяем последний GitHub Release…
+            Проверяем последний релиз…
           </div>
 
           <div class="release-notes">
             <h3>Что нового</h3>
             <ul data-release-notes>
-              <li>Загружаем список изменений последней версии…</li>
+              <li>Загружаем список изменений…</li>
             </ul>
           </div>
         </div>
@@ -210,25 +106,17 @@
     <section class="section">
       <div class="shell">
         <div class="section-intro">
-          <p class="eyebrow">Установка</p>
-          <h2>Первый APK ставится вручную. Дальше приложение обновляет себя само.</h2>
+          <p class="eyebrow">Google</p>
+          <h2>Доступ только для работы приложения</h2>
+          <p>
+            Google используется для входа, чтения доступного пользователю рабочего расписания
+            и синхронизации личных заметок. Приложение не продаёт данные и не использует их для рекламы.
+          </p>
         </div>
-        <div class="grid">
-          <article class="card">
-            <div class="card-number">1</div>
-            <h3>Скачайте APK</h3>
-            <p>Android может попросить разрешить установку приложений из браузера. Это стандартное системное разрешение.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">2</div>
-            <h3>Войдите через Google</h3>
-            <p>Используйте аккаунт, которому уже открыт доступ к рабочей таблице. Приложение проверит доступ реальным запросом.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">3</div>
-            <h3>Получайте обновления</h3>
-            <p>Новая версия проверяется не чаще одного раза в 12 часов. Перед установкой приложение сверяет SHA-256, package name, versionCode и сертификат подписи.</p>
-          </article>
+
+        <div class="actions">
+          <a class="button secondary" href="privacy.html">Политика конфиденциальности</a>
+          <a class="button secondary" href="terms.html">Условия использования</a>
         </div>
       </div>
     </section>
@@ -236,15 +124,11 @@
 
   <footer class="site-footer">
     <div class="shell footer-row">
-      <div>
-        <strong>График СЗ</strong><br>
-        <span>Некоммерческое Android-приложение.</span>
-      </div>
+      <span>График СЗ · внутреннее приложение компании</span>
       <div class="footer-links">
         <a href="privacy.html">Конфиденциальность</a>
         <a href="terms.html">Условия</a>
         <a href="support.html">Поддержка</a>
-        <a href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases">Релизы</a>
       </div>
     </div>
   </footer>
