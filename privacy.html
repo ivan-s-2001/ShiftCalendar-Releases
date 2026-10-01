@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика конфиденциальности — График СЗ</title>
+  <meta name="description" content="Как приложение «График СЗ» получает, использует, хранит и удаляет данные Google и локальные данные пользователя.">  <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/privacy.html">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="./" aria-label="График СЗ, главная">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-calendar"></span></span>
+        <span>График СЗ</span>
+      </a>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a href="./">Главная</a>
+        <a href="terms.html">Условия</a>
+        <a class="keep-mobile" href="support.html">Поддержка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell legal">
+    <header class="legal-head">
+      <p class="eyebrow">Обновлено 1 октября 2026</p>
+      <h1>Политика конфиденциальности</h1>
+      <p class="lead">
+        Эта политика относится к Android-приложению «График СЗ» и объясняет,
+        какие данные оно получает через Google OAuth, зачем они нужны и где хранятся.
+      </p>
+    </header>
+
+    <div class="legal-copy">
+      <div class="notice">
+        Разработчик: <strong>ivan-s-2001</strong>. Контакт по вопросам конфиденциальности:
+        <a href="mailto:falseheat@gmail.com">falseheat@gmail.com</a>.
+      </div>
+
+      <h2>1. Что делает приложение</h2>
+      <p>
+        «График СЗ» показывает рабочее расписание из заранее заданной Google Таблицы.
+        Пользователь входит через Google-аккаунт, которому уже предоставлен доступ к этой таблице.
+        Приложение также позволяет вести личные заметки и напоминания и синхронизировать их
+        через закрытую папку данных приложения в Google Drive.
+      </p>
+      <p>
+        Приложение не предоставляет разработчику отдельный сервер для хранения расписания,
+        заметок или OAuth-данных. Запросы к Google выполняются с устройства пользователя.
+      </p>
+
+      <h2>2. Доступ к данным Google</h2>
+
+      <h3>Google Sheets</h3>
+      <code class="scope">https://www.googleapis.com/auth/spreadsheets.readonly</code>
+      <p>
+        Этот scope нужен для чтения рабочей Google Таблицы и отображения расписания в приложении.
+        Хотя Google описывает этот scope как доступ на чтение таблиц, приложение обращается только
+        к заранее заданному ID рабочей таблицы: оно не перечисляет другие таблицы пользователя и не
+        даёт выбирать произвольные файлы. Приложение не изменяет, не создаёт и не удаляет Google Таблицы.
+        Из полученных данных формируется календарь смен; часть расписания сохраняется локально на
+        устройстве для офлайн-просмотра.
+      </p>
+
+      <h3>Google Drive appDataFolder</h3>
+      <code class="scope">https://www.googleapis.com/auth/drive.appdata</code>
+      <p>
+        Этот scope используется только для синхронизации личных заметок и напоминаний через
+        специальную папку <code>appDataFolder</code>, доступную приложению. Он не даёт приложению
+        доступ к обычным документам, фотографиям или другим файлам пользователя в Google Drive.
+      </p>
+
+      <h3>Данные аккаунта</h3>
+      <p>
+        Приложение может сохранять на устройстве адрес выбранного Google-аккаунта и имя выбранного
+        сотрудника, чтобы восстановить сеанс и показать нужный график. Пароль Google приложение
+        не получает и не хранит.
+      </p>
+
+      <h2>3. Как используются данные</h2>
+      <p>Данные Google используются только для функций, видимых пользователю в приложении:</p>
+      <ul>
+        <li>проверка, что выбранный аккаунт имеет доступ к рабочей таблице;</li>
+        <li>чтение и отображение рабочего расписания;</li>
+        <li>создание офлайн-кеша расписания на устройстве;</li>
+        <li>синхронизация личных заметок и напоминаний через Google Drive appDataFolder.</li>
+      </ul>
+
+      <div class="limited-use">
+        <strong>Limited Use</strong>
+        <span>
+          Использование информации, полученной через Google Workspace API, соответствует Google API
+          Services User Data Policy, включая требования Limited Use. Данные Google не продаются,
+          не используются для рекламы, кредитного скоринга или обучения общих моделей машинного
+          обучения/ИИ и не передаются брокерам данных.
+        </span>
+      </div>
+
+      <h2>4. Где хранятся данные</h2>
+      <p>
+        Кеш расписания, настройки, выбранный аккаунт и локальная копия заметок хранятся на устройстве
+        в приватном хранилище Android. Синхронизированные заметки также могут находиться в
+        <code>appDataFolder</code> Google Drive пользователя. Разработчик не получает копию этих данных
+        на собственный сервер.
+      </p>
+
+      <h2>5. Передача третьим лицам</h2>
+      <p>
+        Приложение не продаёт и не передаёт данные Google рекламным сетям, аналитическим платформам,
+        брокерам данных или другим третьим лицам. Google получает запросы в рамках своих API,
+        необходимых для авторизации, чтения таблицы и синхронизации appDataFolder.
+      </p>
+      <p>
+        Для проверки обновлений приложение обращается к публичному GitHub API и скачивает APK из
+        GitHub Releases. Данные, полученные из Google Sheets или Google Drive, в GitHub не отправляются.
+      </p>
+
+      <h2>6. Аналитика и реклама</h2>
+      <p>
+        В приложении нет рекламных SDK и сторонней продуктовой аналитики. Сайт приложения также
+        не использует рекламные пиксели, сторонние шрифты или аналитические трекеры.
+      </p>
+
+      <h2>7. Удаление данных и отзыв доступа</h2>
+      <ul>
+        <li>Удаление заметки в приложении синхронизирует удаление с appDataFolder, когда доступ к Google Drive доступен.</li>
+        <li>Выход из аккаунта очищает локальные данные аккаунта, кеш расписания и локальные заметки на устройстве.</li>
+        <li>Пользователь может в любой момент отозвать доступ приложения к Google-аккаунту в настройках безопасности Google.</li>
+        <li>Удаление приложения или очистка его данных Android удаляет локальную копию данных.</li>
+      </ul>
+      <p>
+        Данные, уже сохранённые в Google Drive appDataFolder, принадлежат аккаунту пользователя и
+        могут сохраняться после выхода из приложения. Для полного удаления синхронизированных заметок
+        их следует удалить в приложении до отзыва доступа либо удалить данные приложения в настройках
+        Google Drive/Google Account, если такая функция доступна для аккаунта.
+      </p>
+
+      <h2>8. Безопасность</h2>
+      <p>
+        Авторизация выполняется через Google OAuth. Приложение запрашивает только scopes, необходимые
+        для расписания и синхронизации заметок. APK обновлений подписывается тем же release-сертификатом;
+        перед запуском системного установщика приложение проверяет SHA-256, package name, versionCode
+        и сертификат подписи скачанного APK.
+      </p>
+
+      <h2>9. Изменения политики</h2>
+      <p>
+        Если способ использования данных Google изменится, эта политика будет обновлена до выпуска
+        версии приложения, использующей новые данные или новые цели обработки.
+      </p>
+
+      <h2>10. Контакт</h2>
+      <p>
+        Вопросы о данных и запросы, связанные с конфиденциальностью:
+        <a href="mailto:falseheat@gmail.com">falseheat@gmail.com</a>.
+      </p>
+
+      <h2>English summary</h2>
+      <p lang="en">
+        Grafik SZ uses Google Sheets read-only access to display a work schedule and Google Drive
+        <code>appDataFolder</code> access to sync the user's private notes and reminders. Google user
+        data is used only for these user-facing features. It is not sold, used for advertising,
+        transferred to data brokers, or used to train general AI/ML models. Schedule data and notes
+        are handled on the user's device and in the user's Google account; the developer does not
+        operate an application server that stores this Google user data.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <span>© 2026 График СЗ</span>
+      <div class="footer-links">
+        <a href="./">Главная</a>
+        <a href="terms.html">Условия</a>
+        <a href="support.html">Поддержка</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
