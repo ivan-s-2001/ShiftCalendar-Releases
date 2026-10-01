@@ -1,24 +1,8 @@
-# График СЗ — releases & website
+# ShiftCalendar Releases
 
-Публичный репозиторий дистрибуции Android-приложения «График СЗ».
+Публичный репозиторий релизов Android-приложения «График СЗ».
 
-Здесь хранятся:
-- GitHub Releases с подписанными APK;
-- публичный сайт приложения;
-- политика конфиденциальности, условия использования и страница поддержки.
+- Скачать последнюю версию: https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest
+- Сайт приложения: https://ivan-s-2001.github.io/ShiftCalendar-Releases/
 
-Исходный код приложения хранится отдельно и не публикуется в этом репозитории.
-
-## Сайт
-
-Основной адрес после настройки DNS и GitHub Pages:
-
-https://grafik-sz.is-a.dev/
-
-Резервный адрес GitHub Pages:
-
-https://ivan-s-2001.github.io/ShiftCalendar-Releases/
-
-## Обновления
-
-Приложение читает только публичный endpoint `/releases/latest`. Перед установкой обновления оно проверяет SHA-256, package name, versionCode и сертификат подписи APK.
+Исходный код приложения здесь не публикуется.
