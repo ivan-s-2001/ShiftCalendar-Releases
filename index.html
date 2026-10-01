@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>График СЗ</title>
-  <meta name="description" content="Внутреннее Android-приложение для просмотра рабочего графика сотрудников.">
+  <title>График СЗ — внутреннее приложение</title>
+  <meta name="description" content="Внутреннее Android-приложение для сотрудников компании: рабочий график, виджеты, заметки и напоминания.">
   <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
@@ -12,7 +12,7 @@
   <script src="assets/site.js" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="График СЗ">
-  <meta property="og:description" content="Рабочий график сотрудников на Android.">
+  <meta property="og:description" content="Внутреннее приложение для рабочего графика сотрудников.">
   <meta property="og:url" content="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
 </head>
 <body>
@@ -33,12 +33,12 @@
   </header>
 
   <main id="main">
-    <section class="shell hero">
+    <section class="shell hero compact-hero">
       <div>
-        <p class="eyebrow">Внутреннее приложение · Android</p>
+        <p class="eyebrow">Внутреннее приложение компании</p>
         <h1>График СЗ</h1>
         <p class="lead">
-          Приложение для сотрудников компании: рабочий график, виджеты,
+          Рабочий график сотрудников на Android: календарь смен, виджеты,
           заметки и напоминания.
         </p>
 
@@ -47,7 +47,6 @@
              href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
             Скачать APK
           </a>
-          <a class="button secondary" href="privacy.html">Конфиденциальность</a>
         </div>
 
         <p class="release-meta">
@@ -63,18 +62,18 @@
           <div class="demo-head">Чт</div><div class="demo-head">Пт</div><div class="demo-head">Сб</div>
           <div class="demo-head">Вс</div>
 
-          <div class="shift morning dark-ink"><span class="day">5</span><span>04:00<br>12:30</span></div>
-          <div class="shift fn dark-ink"><span class="day">6</span><span>06:00<br>15:00</span></div>
-          <div class="shift dayoff dark-ink"><span class="day">7</span><span>ВЫХ</span></div>
-          <div class="shift pushkin dark-ink"><span class="day">8</span><span>07:00<br>16:00</span></div>
-          <div class="shift evening dark-ink"><span class="day">9</span><span>12:30<br>21:00</span></div>
-          <div class="shift overtime dark-ink"><span class="day">10</span><span>08:00<br>19:00</span></div>
-          <div class="shift weekend dark-ink"><span class="day">11</span><span>04:00<br>21:00</span></div>
+          <div class="shift morning"><span class="day">5</span><span>04:00<br>12:30</span></div>
+          <div class="shift fn"><span class="day">6</span><span>06:00<br>15:00</span></div>
+          <div class="shift dayoff"><span class="day">7</span><span>ВЫХ</span></div>
+          <div class="shift pushkin"><span class="day">8</span><span>07:00<br>16:00</span></div>
+          <div class="shift evening"><span class="day">9</span><span>12:30<br>21:00</span></div>
+          <div class="shift overtime"><span class="day">10</span><span>08:00<br>19:00</span></div>
+          <div class="shift weekend"><span class="day">11</span><span>04:00<br>21:00</span></div>
         </div>
       </div>
     </section>
 
-    <section id="download" class="section">
+    <section id="download" class="section compact-section">
       <div class="shell">
         <div class="download-panel">
           <div class="download-row">
@@ -89,9 +88,7 @@
             </a>
           </div>
 
-          <div class="status" data-release-status>
-            Проверяем последний релиз…
-          </div>
+          <div class="status" data-release-status>Проверяем последний релиз…</div>
 
           <div class="release-notes">
             <h3>Что нового</h3>
@@ -103,20 +100,22 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="shell">
-        <div class="section-intro">
-          <p class="eyebrow">Google</p>
-          <h2>Доступ только для работы приложения</h2>
-          <p>
-            Google используется для входа, чтения доступного пользователю рабочего расписания
-            и синхронизации личных заметок. Приложение не продаёт данные и не использует их для рекламы.
-          </p>
-        </div>
-
+    <section class="section compact-section">
+      <div class="shell simple-copy">
+        <p class="eyebrow">Google</p>
+        <h2>Доступ нужен только для работы приложения</h2>
+        <p>
+          Для входа используется Google OAuth. Приложение читает доступное сотруднику
+          рабочее расписание из Google Sheets и синхронизирует личные заметки через
+          закрытую область данных приложения в Google Drive.
+        </p>
+        <p>
+          Данные не используются для рекламы и не продаются.
+          Подробнее — в политике конфиденциальности.
+        </p>
         <div class="actions">
-          <a class="button secondary" href="privacy.html">Политика конфиденциальности</a>
-          <a class="button secondary" href="terms.html">Условия использования</a>
+          <a class="button secondary" href="privacy.html">Конфиденциальность</a>
+          <a class="button secondary" href="terms.html">Условия</a>
         </div>
       </div>
     </section>
