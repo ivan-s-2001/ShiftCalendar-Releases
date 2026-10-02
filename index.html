@@ -3,17 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>График СЗ — внутреннее приложение</title>
-  <meta name="description" content="Внутреннее Android-приложение для сотрудников компании: рабочий график, виджеты, заметки и напоминания.">
-  <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="График службы заботы — внутреннее Android-приложение для сотрудников.">
+  <title>График СЗ — приложение для сотрудников</title>
+  <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="График СЗ">
-  <meta property="og:description" content="Внутреннее приложение для рабочего графика сотрудников.">
-  <meta property="og:url" content="https://ivan-s-2001.github.io/ShiftCalendar-Releases/">
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
@@ -21,101 +17,77 @@
   <header class="site-header">
     <div class="shell nav">
       <a class="brand" href="./" aria-label="График СЗ, главная">
-        <span class="brand-mark" aria-hidden="true"><span class="brand-calendar"></span></span>
+        <img src="assets/app-icon.svg" width="40" height="40" alt="">
         <span>График СЗ</span>
       </a>
-      <nav class="nav-links" aria-label="Основная навигация">
-        <a href="privacy.html">Конфиденциальность</a>
-        <a href="support.html">Поддержка</a>
-        <a class="keep-mobile" href="#download">Скачать</a>
+      <nav class="nav-links" aria-label="Навигация">
+        <a href="support.html">Помощь</a>
+        <a class="nav-download" href="#download">Скачать приложение</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="shell hero compact-hero">
-      <div>
-        <p class="eyebrow">Внутреннее приложение компании</p>
-        <h1>График СЗ</h1>
-        <p class="lead">
-          Рабочий график сотрудников на Android: календарь смен, виджеты,
-          заметки и напоминания.
-        </p>
-
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>Для сотрудников службы заботы</p>
+        <h1 id="hero-title">График смен<br><span>всегда под рукой</span></h1>
+        <p class="lead">Смотрите свои смены и график команды, добавляйте заметки и напоминания. Всё в одном приложении для Android.</p>
         <div class="actions">
-          <a class="button primary" data-download-latest
-             href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
-            Скачать APK
-          </a>
+          <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">Скачать APK <span aria-hidden="true">↓</span></a>
+          <span class="platform">Android 8.0 и новее</span>
         </div>
-
-        <p class="release-meta">
-          <span data-release-version>Последняя версия</span>
-          <span aria-hidden="true"> · </span>
-          <span data-release-meta>Android 8.0+</span>
-        </p>
+        <p class="release-meta" data-release-version>Проверяем последнюю версию…</p>
       </div>
 
-      <div class="hero-card" aria-label="Пример рабочего графика">
-        <div class="calendar-demo">
-          <div class="demo-head">Пн</div><div class="demo-head">Вт</div><div class="demo-head">Ср</div>
-          <div class="demo-head">Чт</div><div class="demo-head">Пт</div><div class="demo-head">Сб</div>
-          <div class="demo-head">Вс</div>
-
-          <div class="shift morning"><span class="day">5</span><span>04:00<br>12:30</span></div>
-          <div class="shift fn"><span class="day">6</span><span>06:00<br>15:00</span></div>
-          <div class="shift dayoff"><span class="day">7</span><span>ВЫХ</span></div>
-          <div class="shift pushkin"><span class="day">8</span><span>07:00<br>16:00</span></div>
-          <div class="shift evening"><span class="day">9</span><span>12:30<br>21:00</span></div>
-          <div class="shift overtime"><span class="day">10</span><span>08:00<br>19:00</span></div>
-          <div class="shift weekend"><span class="day">11</span><span>04:00<br>21:00</span></div>
+      <div class="preview-wrap">
+        <div class="preview" aria-label="Пример недельного графика">
+          <div class="preview-heading">
+            <div><span class="preview-kicker">МОЙ ГРАФИК</span><strong>Октябрь</strong></div>
+            <span class="preview-arrows" aria-hidden="true">‹ &nbsp; ›</span>
+          </div>
+          <div class="calendar-demo">
+            <span class="demo-head">ПН</span><span class="demo-head">ВТ</span><span class="demo-head">СР</span><span class="demo-head">ЧТ</span><span class="demo-head">ПТ</span><span class="demo-head">СБ</span><span class="demo-head">ВС</span>
+            <div class="shift morning"><span class="day">5</span><span class="shift-time">04:00<br>12:30</span></div>
+            <div class="shift fn"><span class="day">6</span><span class="shift-time">06:00<br>15:00</span></div>
+            <div class="shift dayoff"><span class="day">7</span><span class="shift-time">Вых</span></div>
+            <div class="shift pushkin"><span class="day">8</span><span class="shift-time">07:00<br>16:00</span></div>
+            <div class="shift evening"><span class="day">9</span><span class="shift-time">12:30<br>21:00</span></div>
+            <div class="shift empty"><span class="day">10</span><span class="shift-time">—</span></div>
+            <div class="shift weekend"><span class="day">11</span><span class="shift-time">04:00<br>21:00</span></div>
+          </div>
+          <div class="preview-footer"><span class="today-mark"></span> Понятный график на каждый день</div>
         </div>
       </div>
     </section>
 
-    <section id="download" class="section compact-section">
+    <section class="section features" aria-labelledby="features-title">
       <div class="shell">
-        <div class="download-panel">
-          <div class="download-row">
-            <div>
-              <p class="eyebrow">Последний релиз</p>
-              <h2 data-release-version>График СЗ</h2>
-              <p data-release-meta>Подписанный APK</p>
-            </div>
-            <a class="button primary" data-download-latest
-               href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
-              Скачать APK
-            </a>
-          </div>
-
-          <div class="status" data-release-status>Проверяем последний релиз…</div>
-
-          <div class="release-notes">
-            <h3>Что нового</h3>
-            <ul data-release-notes>
-              <li>Загружаем список изменений…</li>
-            </ul>
-          </div>
+        <p class="eyebrow">Знакомые обозначения</p>
+        <h2 id="features-title">Смена читается с первого взгляда</h2>
+        <p class="section-lead">Цвета и значки помогают быстро узнать, чем вы занимаетесь сегодня.</p>
+        <div class="feature-grid">
+          <div class="feature"><span class="feature-icon mail"><img src="assets/ic_mail_responsible.svg" alt="" width="44" height="44"></span><div><h3>Почта и Verbox</h3><p>Ответственность за сообщения в течение смены.</p></div></div>
+          <div class="feature"><span class="feature-icon fn"><img src="assets/ic_fiscal_replacement.svg" alt="" width="44" height="44"></span><div><h3>Замена ФН</h3><p>Отдельное обозначение для своей задачи.</p></div></div>
+          <div class="feature"><span class="feature-icon pushkin"><img src="assets/ic_pushkin_cancelled.svg" alt="" width="44" height="44"></span><div><h3>Пушкинская карта</h3><p>Обработка отменённых мероприятий.</p></div></div>
         </div>
       </div>
     </section>
 
-    <section class="section compact-section">
-      <div class="shell simple-copy">
-        <p class="eyebrow">Google</p>
-        <h2>Доступ нужен только для работы приложения</h2>
-        <p>
-          Для входа используется Google OAuth. Приложение читает доступное сотруднику
-          рабочее расписание из Google Sheets и синхронизирует личные заметки через
-          закрытую область данных приложения в Google Drive.
-        </p>
-        <p>
-          Данные не используются для рекламы и не продаются.
-          Подробнее — в политике конфиденциальности.
-        </p>
-        <div class="actions">
-          <a class="button secondary" href="privacy.html">Конфиденциальность</a>
-          <a class="button secondary" href="terms.html">Условия</a>
+    <section id="download" class="section download-section" aria-labelledby="download-title">
+      <div class="shell download-panel">
+        <div class="download-head">
+          <div>
+            <p class="eyebrow">Последний релиз</p>
+            <h2 id="download-title" data-release-version>График СЗ</h2>
+            <p class="download-meta" data-release-meta>Подписанный APK для Android</p>
+          </div>
+          <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">Скачать APK <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="status" data-release-status aria-live="polite">Проверяем последний релиз…</p>
+        <div class="release-notes">
+          <h3>Что нового</h3>
+          <ul data-release-notes><li>Загружаем список изменений…</li></ul>
         </div>
       </div>
     </section>
@@ -123,12 +95,8 @@
 
   <footer class="site-footer">
     <div class="shell footer-row">
-      <span>График СЗ · внутреннее приложение компании</span>
-      <div class="footer-links">
-        <a href="privacy.html">Конфиденциальность</a>
-        <a href="terms.html">Условия</a>
-        <a href="support.html">Поддержка</a>
-      </div>
+      <span>График СЗ <span class="footer-separator">·</span> Внутреннее приложение</span>
+      <div class="footer-links"><a href="support.html">Помощь</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a></div>
     </div>
   </footer>
 </body>

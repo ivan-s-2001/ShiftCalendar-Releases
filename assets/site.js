@@ -1,109 +1,56 @@
 (() => {
-  const repo = "ivan-s-2001/ShiftCalendar-Releases";
-  const endpoint = `https://api.github.com/repos/${repo}/releases/latest`;
+  const endpoint = "https://api.github.com/repos/ivan-s-2001/ShiftCalendar-Releases/releases/latest";
 
-  const formatBytes = (bytes) => {
-    if (!Number.isFinite(bytes) || bytes <= 0) return "";
-    const mb = bytes / 1024 / 1024;
-    return `${mb.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} МБ`;
+  const setText = (selector, value) => {
+    document.querySelectorAll(selector).forEach((node) => { node.textContent = value; });
   };
 
-  const formatDate = (value) => {
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return "";
-    return new Intl.DateTimeFormat("ru-RU", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    }).format(date);
-  };
+  const formatBytes = (bytes) => bytes > 0
+    ? `${(bytes / 1048576).toLocaleString("ru-RU", { maximumFractionDigits: 1 })} МБ`
+    : "";
 
-  async function loadLatestRelease() {
-    const buttons = [...document.querySelectorAll("[data-download-latest]")];
-    const versionNodes = [...document.querySelectorAll("[data-release-version]")];
-    const metaNodes = [...document.querySelectorAll("[data-release-meta]")];
-    const statusNodes = [...document.querySelectorAll("[data-release-status]")];
-    const notesNodes = [...document.querySelectorAll("[data-release-notes]")];
-
-    if (!buttons.length && !versionNodes.length && !metaNodes.length) return;
-
+  async function loadRelease() {
     try {
-      const response = await fetch(endpoint, {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`GitHub API: HTTP ${response.status}`);
-      }
-
+      const response = await fetch(endpoint, { headers: { Accept: "application/vnd.github+json" } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const release = await response.json();
-      const assets = Array.isArray(release.assets) ? release.assets : [];
-      const apk = assets.find((asset) =>
-        typeof asset?.name === "string" &&
-        asset.name.toLowerCase().endsWith(".apk")
-      );
-
-      if (!apk?.browser_download_url) {
-        throw new Error("В последнем релизе пока нет APK");
-      }
+      const apk = release.assets?.find((asset) => asset.name?.endsWith(".apk"));
+      if (!apk?.browser_download_url) throw new Error("APK отсутствует");
 
       const title = release.name || release.tag_name || "Последняя версия";
-      const size = formatBytes(Number(apk.size));
-      const published = formatDate(release.published_at);
-
-      buttons.forEach((button) => {
-        button.href = apk.browser_download_url;
-        button.classList.remove("disabled");
-        button.removeAttribute("aria-disabled");
-        button.textContent = "Скачать APK";
+      setText("[data-release-version]", title);
+      const date = new Date(release.published_at);
+      const published = Number.isNaN(date.getTime()) ? "" : new Intl.DateTimeFormat("ru-RU", {
+        day: "numeric", month: "long", year: "numeric",
+      }).format(date);
+      setText("[data-release-meta]", [formatBytes(apk.size), published].filter(Boolean).join(" · "));
+      setText("[data-release-status]", "Подписанный APK загружается из GitHub Releases.");
+      document.querySelectorAll("[data-download-latest]").forEach((link) => {
+        link.href = apk.browser_download_url;
       });
 
-      versionNodes.forEach((node) => {
-        node.textContent = title;
-      });
-
-      metaNodes.forEach((node) => {
-        node.textContent = [size, published].filter(Boolean).join(" · ");
-      });
-
-      statusNodes.forEach((node) => {
-        node.textContent = "APK загружается напрямую из GitHub Releases.";
-      });
-
-
-      const notes = String(release.body || "")
-        .split("\n")
-        .map((line) => line.trim())
-        .filter((line) => /^[-*]\s+/.test(line))
-        .map((line) => line.replace(/^[-*]\s+/, ""))
-        .filter(Boolean)
+      const notes = String(release.body || "").split("\n")
+        .map((line) => line.trim().replace(/^[-*•]\s*/, ""))
+        .filter((line) => line && !line.startsWith("#"))
         .slice(0, 8);
-
-      notesNodes.forEach((node) => {
-        node.replaceChildren();
-        const items = notes.length ? notes : ["Для этой версии список изменений не указан."];
-        items.forEach((note) => {
-          const li = document.createElement("li");
-          li.textContent = note;
-          node.append(li);
-        });
+      document.querySelectorAll("[data-release-notes]").forEach((list) => {
+        list.replaceChildren(...(notes.length ? notes : ["Список изменений не указан."]).map((note) => {
+          const item = document.createElement("li");
+          item.textContent = note;
+          return item;
+        }));
       });
-    } catch (error) {
-      statusNodes.forEach((node) => {
-        node.textContent =
-          "Публичный релиз ещё готовится. Эта страница обновится после первой публикации APK.";
-      });
-
-      notesNodes.forEach((node) => {
-        node.replaceChildren();
-        const li = document.createElement("li");
-        li.textContent = "Список изменений появится вместе с первым публичным релизом.";
-        node.append(li);
+    } catch {
+      setText("[data-release-version]", "Последняя версия");
+      setText("[data-release-meta]", "Откройте страницу релизов");
+      setText("[data-release-status]", "Не удалось проверить релиз. Кнопка откроет список выпусков на GitHub.");
+      document.querySelectorAll("[data-release-notes]").forEach((list) => {
+        const item = document.createElement("li");
+        item.textContent = "Изменения доступны на странице релиза.";
+        list.replaceChildren(item);
       });
     }
   }
 
-  loadLatestRelease();
+  loadRelease();
 })();
