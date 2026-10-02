@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f7f8f7">
+  <meta name="theme-color" content="#f6f7f6">
   <meta name="description" content="График службы заботы — внутреннее Android-приложение для сотрудников.">
   <title>График СЗ — приложение для сотрудников</title>
-  <link rel="icon" href="assets/app-icon.svg?v=20261002c" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/site.css?v=20261002d">
+  <link rel="icon" href="assets/app-icon.svg?v=20261002e" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css?v=20261002e">
   <script src="assets/site.js?v=20261002b" defer></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
   <header class="site-header">
     <div class="shell nav">
       <a class="brand" href="./" aria-label="График СЗ, главная">
-        <img src="assets/app-icon.svg" width="40" height="40" alt="">
+        <img src="assets/app-icon.svg" width="38" height="38" alt="">
         <span>График СЗ</span>
       </a>
       <nav class="nav-links" aria-label="Навигация">
@@ -31,8 +31,8 @@
     <section class="shell hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span>Для сотрудников службы заботы</p>
-        <h1 id="hero-title">Ваш график<br><span>смен</span></h1>
-        <p class="lead">Смотрите свои смены и график команды. Добавляйте заметки и напоминания.</p>
+        <h1 id="hero-title">Ваш график<br><span>без лишнего</span></h1>
+        <p class="lead">Смотрите свои смены и график команды, быстро переходите между периодами, добавляйте заметки и напоминания.</p>
         <div class="actions">
           <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">Скачать APK <span aria-hidden="true">↓</span></a>
           <span class="platform">Android 8.0 и новее</span>
@@ -41,22 +41,95 @@
       </div>
 
       <div class="preview-wrap">
-        <div class="preview" aria-label="Пример недельного графика">
+        <div class="preview" aria-label="Пример экрана «Мой график»">
           <div class="preview-heading">
-            <div><span class="preview-kicker">МОЙ ГРАФИК</span><strong>Октябрь</strong></div>
-            <span class="preview-arrows" aria-hidden="true">‹ &nbsp; ›</span>
+            <span class="preview-nav-button" aria-hidden="true">‹</span>
+            <div class="preview-period">
+              <strong>Октябрь</strong>
+              <span class="preview-kicker">Мой график⌄</span>
+            </div>
+            <span class="preview-nav-button" aria-hidden="true">›</span>
           </div>
+
+          <div class="preview-mode-tabs" aria-hidden="true">
+            <span>Год</span>
+            <span class="active">Месяц</span>
+            <span>Неделя</span>
+            <span>Список</span>
+          </div>
+
           <div class="calendar-demo">
             <span class="demo-head">ПН</span><span class="demo-head">ВТ</span><span class="demo-head">СР</span><span class="demo-head">ЧТ</span><span class="demo-head">ПТ</span><span class="demo-head">СБ</span><span class="demo-head">ВС</span>
-            <div class="shift morning"><span class="day">5</span><span class="shift-time">04:00<br>12:30</span></div>
-            <div class="shift fn"><span class="day">6</span><span class="shift-time">06:00<br>15:00</span></div>
-            <div class="shift dayoff"><span class="day">7</span><span class="shift-time">Вых</span></div>
-            <div class="shift pushkin"><span class="day">8</span><span class="shift-time">07:00<br>16:00</span></div>
-            <div class="shift evening"><span class="day">9</span><span class="shift-time">12:30<br>21:00</span></div>
-            <div class="shift empty"><span class="day">10</span><span class="shift-time">—</span></div>
-            <div class="shift weekend"><span class="day">11</span><span class="shift-time">04:00<br>21:00</span></div>
+
+            <span class="demo-empty"></span>
+            <span class="demo-empty"></span>
+            <span class="demo-empty"></span>
+
+            <div class="shift pushkin">
+              <span class="day">1</span>
+              <img class="shift-icon" src="assets/ic_pushkin_cancelled.svg" alt="">
+              <span class="shift-time">07:00<br>16:00</span>
+            </div>
+
+            <div class="shift regular today">
+              <span class="day">2</span>
+              <span class="shift-time">08:00<br>17:00</span>
+            </div>
+
+            <div class="shift dayoff">
+              <span class="day">3 <span class="holiday-dot-inline"></span></span>
+              <span class="shift-time">Выходной</span>
+            </div>
+
+            <div class="shift dayoff">
+              <span class="day">4 <span class="holiday-dot-inline"></span></span>
+              <span class="shift-time">Выходной</span>
+            </div>
+
+            <div class="shift morning">
+              <span class="day">5</span>
+              <img class="shift-icon" src="assets/ic_mail_responsible.svg" alt="">
+              <span class="shift-time">04:00<br>12:00</span>
+            </div>
+
+            <div class="shift fn">
+              <span class="day">6</span>
+              <img class="shift-icon" src="assets/ic_fiscal_replacement.svg" alt="">
+              <span class="shift-time">06:00<br>15:00</span>
+            </div>
+
+            <div class="shift regular">
+              <span class="day">7</span>
+              <span class="shift-time">11:00<br>20:00</span>
+            </div>
+
+            <div class="shift pushkin">
+              <span class="day">8</span>
+              <img class="shift-icon" src="assets/ic_pushkin_cancelled.svg" alt="">
+              <span class="shift-time">07:00<br>16:00</span>
+            </div>
+
+            <div class="shift evening">
+              <span class="day">9</span>
+              <span class="shift-time">12:30<br>21:00</span>
+            </div>
+
+            <div class="shift dayoff">
+              <span class="day">10 <span class="holiday-dot-inline"></span></span>
+              <span class="shift-time">Выходной</span>
+            </div>
+
+            <div class="shift weekend">
+              <span class="day">11</span>
+              <img class="shift-icon" src="assets/ic_mail_responsible.svg" alt="">
+              <span class="shift-time">04:00<br>21:00</span>
+            </div>
           </div>
-          <div class="preview-footer"><span class="today-mark"></span> Пример недели: 5–11 октября</div>
+
+          <div class="preview-footer">
+            <span><strong>Цвет = тип смены</strong> · время всегда видно</span>
+            <span style="display:flex;align-items:center;gap:6px"><span class="today-mark"></span> сегодня</span>
+          </div>
         </div>
       </div>
     </section>
@@ -64,16 +137,30 @@
     <section class="section features" aria-labelledby="features-title">
       <div class="shell">
         <p class="eyebrow">Задачи на смене</p>
-        <h2 id="features-title">Значки ваших задач</h2>
-        <p class="section-lead">Почта, замена ФН и отменённые мероприятия отмечены своими значками.</p>
+        <h2 id="features-title">Важное видно сразу</h2>
+        <p class="section-lead">Почта, замена ФН и отменённые мероприятия отмечены своими значками прямо в графике.</p>
+
         <div class="feature-grid">
-          <div class="feature"><span class="feature-icon mail"><img src="assets/ic_mail_responsible.svg" alt="" width="44" height="44"></span><div><h3>Почта и Verbox</h3><p>Ответственный за почту и Verbox.</p></div></div>
-          <div class="feature"><span class="feature-icon fn"><img src="assets/ic_fiscal_replacement.svg" alt="" width="44" height="44"></span><div><h3>Замена ФН</h3><p>Смена с заменой фискального накопителя.</p></div></div>
-          <div class="feature"><span class="feature-icon pushkin"><img src="assets/ic_pushkin_cancelled.svg" alt="" width="44" height="44"></span><div><h3>Пушкинская карта</h3><p>Отменённые мероприятия с Пушкинской картой.</p></div></div>
+          <div class="feature">
+            <span class="feature-icon mail"><img src="assets/ic_mail_responsible.svg" alt="" width="42" height="42"></span>
+            <div><h3>Почта и Verbox</h3><p>Ответственный за почту и Verbox в выбранную смену.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon fn"><img src="assets/ic_fiscal_replacement.svg" alt="" width="42" height="42"></span>
+            <div><h3>Замена ФН</h3><p>Смена с заменой фискального накопителя.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon pushkin"><img src="assets/ic_pushkin_cancelled.svg" alt="" width="42" height="42"></span>
+            <div><h3>Пушкинская карта</h3><p>Обработка отменённых мероприятий с Пушкинской картой.</p></div>
+          </div>
         </div>
+
         <div class="holiday-callout">
           <span class="holiday-date" aria-hidden="true">4 <span class="holiday-dot"></span></span>
-          <div><strong>Официальные праздники и выходные</strong><p>Белая точка у числа показывает федеральный праздник или дополнительный выходной. Откройте день, чтобы увидеть название праздника.</p></div>
+          <div>
+            <strong>Производственный календарь РФ</strong>
+            <p>Белая точка у числа означает нерабочий день по производственному календарю РФ: обычный выходной, перенос или праздник. Если суббота или воскресенье рабочие, точки нет.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -100,7 +187,11 @@
   <footer class="site-footer">
     <div class="shell footer-row">
       <span>График СЗ <span class="footer-separator">·</span> Внутреннее приложение</span>
-      <div class="footer-links"><a href="support.html">Помощь</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a></div>
+      <div class="footer-links">
+        <a href="support.html">Помощь</a>
+        <a href="privacy.html">Конфиденциальность</a>
+        <a href="terms.html">Условия</a>
+      </div>
     </div>
   </footer>
 </body>
