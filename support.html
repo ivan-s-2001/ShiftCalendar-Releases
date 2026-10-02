@@ -3,33 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f6">
   <title>Поддержка — График СЗ</title>
   <meta name="description" content="Поддержка приложения «График СЗ».">
   <link rel="canonical" href="https://ivan-s-2001.github.io/ShiftCalendar-Releases/support.html">
-  <link rel="stylesheet" href="assets/site.css">
-  <script src="assets/site.js" defer></script>
+  <link rel="icon" href="assets/app-icon.svg?v=20261002e" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css?v=20261002e">
+  <script src="assets/site.js?v=20261002b" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
     <div class="shell nav">
-      <a class="brand" href="./">
-        <span class="brand-mark" aria-hidden="true"><span class="brand-calendar"></span></span>
+      <a class="brand" href="./" aria-label="График СЗ, главная">
+        <img src="assets/app-icon.svg" width="38" height="38" alt="">
         <span>График СЗ</span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Навигация">
         <a href="./">Главная</a>
         <a href="privacy.html">Конфиденциальность</a>
+        <a class="nav-download keep-mobile" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">Скачать</a>
       </nav>
     </div>
   </header>
 
-  <main class="shell legal">
+  <main id="main" class="shell legal">
     <header class="legal-head">
       <p class="eyebrow">Поддержка</p>
       <h1>Помощь с приложением</h1>
-      <p class="lead">
-        При проблеме укажите модель устройства, версию Android и версию «График СЗ».
-      </p>
+      <p class="lead">Если что-то работает не так, укажите модель устройства, версию Android и версию «График СЗ».</p>
     </header>
 
     <div class="legal-copy">
@@ -39,26 +41,20 @@
             <h3 data-release-version>Последняя версия</h3>
             <p data-release-meta>Проверяем релиз…</p>
           </div>
-          <a class="button primary" data-download-latest
-             href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">
-            Скачать APK
-          </a>
+          <a class="button primary" data-download-latest href="https://github.com/ivan-s-2001/ShiftCalendar-Releases/releases/latest">Скачать APK ↓</a>
         </div>
       </div>
 
-      <h2>Контакт</h2>
+      <h2>Связаться</h2>
+      <p>Опишите проблему одним сообщением и приложите скриншот, если он помогает её увидеть.</p>
       <p><a href="mailto:falseheat@gmail.com">falseheat@gmail.com</a></p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-row">
-      <span>График СЗ</span>
-      <div class="footer-links">
-        <a href="./">Главная</a>
-        <a href="privacy.html">Конфиденциальность</a>
-        <a href="terms.html">Условия</a>
-      </div>
+      <span>График СЗ <span class="footer-separator">·</span> Поддержка</span>
+      <div class="footer-links"><a href="./">Главная</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a></div>
     </div>
   </footer>
 </body>
